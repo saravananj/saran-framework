@@ -38,15 +38,15 @@ $mail->Password   = $smtp_password;
 //Set who the message is to be sent from
 $mail->SetFrom($smtp_frommail, $smtp_fromname);
 //Set who the message is to be sent to
-$mail->AddAddress('saravananj.web@gmail.com', 'Saravanan Jaabalan');
+$mail->AddAddress('replace_this@mail.com', 'Saravanan Jayabalan');
 //Set the subject line
 $mail->Subject = 'PHPMailer SMTP test';
 //Read an HTML message body from an external file, convert referenced images to embedded, convert HTML into a basic plain-text alternative body
-$mail->MsgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+$mail->MsgHTML("<b>Sample <i>HTML</i> Text</b>");
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
 //Attach an image file
-$mail->AddAttachment('images/phpmailer_mini.gif');
+//$mail->AddAttachment('images/phpmailer_mini.gif');
 
 //Send the message, check for errors
 if(!$mail->Send()) {
